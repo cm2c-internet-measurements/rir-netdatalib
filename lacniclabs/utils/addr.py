@@ -48,7 +48,7 @@ def pfxExplode(w_pfx):
             record['istart'] = int(pfx.network)
             record['iend'] = int(pfx.broadcast)
             record['pfxlen'] = pfx.prefixlen
-            record['equiv'] = (record['iend']-record['istart'])/256
+            record['equiv'] = (record['iend']-record['istart']+1)/256
         except ipaddr.AddressValueError:
             sys.stderr.write("##### bad ip prefix: %s\n\n\n" % (record['prefix']))
             record['istart'] = -1
@@ -66,7 +66,7 @@ def pfxExplode(w_pfx):
                 record['istart'] = int(pfx.network) / pfx_norm_base
                 record['iend'] = int(pfx.broadcast) / pfx_norm_base
                 record['pfxlen'] = pfx.prefixlen
-                record['equiv'] = (record['iend'] - record['istart']) / math.pow(2, 32)
+                record['equiv'] = (record['iend'] - record['istart']+1) / math.pow(2, 32)
             except ipaddr.AddressValueError:
                 sys.stderr.write("##### bad ip prefix: %s\n\n\n" % (record['prefix']))
                 record['istart'] = -1
@@ -77,7 +77,7 @@ def pfxExplode(w_pfx):
             record['istart'] = 0
             record['iend']   = 0
             record['pfxlen'] = 0
-        # record['equiv'] = (record['iend'] - record['istart'] + 1) / pow(2,32)
+            record['equiv'] = 0
         return record
     else:
         # return record['type']
