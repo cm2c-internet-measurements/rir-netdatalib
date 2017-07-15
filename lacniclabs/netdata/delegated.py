@@ -163,7 +163,7 @@ class delegatedStats(object):
         elif w_row['type'] == 'asn' and w_row['block'] != '*':
             record['prefix'] = 'na/asn'
             record['istart'] = int(w_row['block'])
-            record['iend'] = int(w_row['block']) + int(w_row['length'])
+            record['iend'] = int(w_row['block']) + int(w_row['length']) - 1
             record['equiv'] = int(w_row['length'])
             return record[w_col_name]
         else:
