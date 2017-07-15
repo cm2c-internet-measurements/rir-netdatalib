@@ -8,7 +8,7 @@
 from setuptools import setup
 
 setup(name='lacniclabs',
-      version='0.1.4',
+      version='0.1.5',
       description='cm2c python commons',
       url='https://github.com/LACNIC/labs-opendata-datasets',
       author='Carlos M. Martinez',

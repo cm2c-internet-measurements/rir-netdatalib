@@ -25,6 +25,7 @@ class ripevalRoaData(object):
 
     :author: Carlos M. Martinez, carlos@lacnic.net
     :date: 20160526
+    :modified: 20170715
     """
 
     #begin init
@@ -85,7 +86,7 @@ class ripevalRoaData(object):
         #
         r = self.dbh.importFile(fn, p, 10000)
         #
-        # calculate new columns
+        # calculate new columns: origin_as2 strips the leading AS from origin_as
         # mif = lambda x: self._populate_columns("type", x)
         mif = lambda x: str.strip(str(x['origin_as']),"AS")
         p = self.dbh.calculateMetaColumn("origin_as2", mif)
