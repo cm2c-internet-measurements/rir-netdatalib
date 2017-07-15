@@ -48,15 +48,15 @@ rir_config_data = { 'lacnic':
                     'apnic':
                         {'dlg1': ["ftp://ftp.lacnic.net/pub/stats/apnic/delegated-apnic-%s", "data/delegated-apnic-latest"],
                          'dlge': ["ftp://ftp.lacnic.net/pub/stats/apnic/delegated-apnic-extended-%s", "data/delegated-apnic-extended-latest"] ,
-                         'roaexport': ['http://ripeval.labs.lacnic.net/rpki/batch-validation/%s/apnic.tal-roa-prefixes.csv'],
+                         'roaexport': ['http://ripeval.labs.lacnic.net/rpki/batch-validation/%s/apnic.tal-roa-prefixes.csv']
                         },
                     'ripencc':
                         {'dlg1': ["ftp://ftp.lacnic.net/pub/stats/ripencc/delegated-ripencc-%s", "data/delegated-ripencc-latest"],
                          'dlge': ["ftp://ftp.lacnic.net/pub/stats/ripencc/delegated-ripencc-extended-%s", "data/delegated-ripencc-extended-latest"],
-                         'roaexport': ['http://ripeval.labs.lacnic.net/rpki/batch-validation/%s/ripe-ncc.tal-roa-prefixes.csv']
-                         #'countrydata': json_load('etc/ripencc_region.json'),
+                         'roaexport': ['http://ripeval.labs.lacnic.net/rpki/batch-validation/%s/ripe-ncc.tal-roa-prefixes.csv'],
                          'ris_whois_v4': 'http://www.ris.ripe.net/dumps/riswhoisdump.IPv4.gz',
                          'ris_whois_v6': 'http://www.ris.ripe.net/dumps/riswhoisdump.IPv6.gz'
+                         #'countrydata': json_load('etc/ripencc_region.json'),
                     },
                     'arin':
                         {'dlg1': ["ftp://ftp.arin.net/pub/stats/arin/delegated-arin-%s", "data/delegated-arin-latest"],
