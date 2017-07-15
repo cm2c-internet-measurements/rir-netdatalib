@@ -53,16 +53,16 @@ rir_config_data = { 'lacnic':
                     'ripencc':
                         {'dlg1': ["ftp://ftp.lacnic.net/pub/stats/ripencc/delegated-ripencc-%s", "data/delegated-ripencc-latest"],
                          'dlge': ["ftp://ftp.lacnic.net/pub/stats/ripencc/delegated-ripencc-extended-%s", "data/delegated-ripencc-extended-latest"],
-                         'roaexport': ['http://ripeval.labs.lacnic.net/rpki/batch-validation/%s/ripe-ncc.tal-roa-prefixes.csv'],
-                         'countrydata': json_load('etc/ripencc_region.json'),
+                         'roaexport': ['http://ripeval.labs.lacnic.net/rpki/batch-validation/%s/ripe-ncc.tal-roa-prefixes.csv']
+                         #'countrydata': json_load('etc/ripencc_region.json'),
                          'ris_whois_v4': 'http://www.ris.ripe.net/dumps/riswhoisdump.IPv4.gz',
                          'ris_whois_v6': 'http://www.ris.ripe.net/dumps/riswhoisdump.IPv6.gz'
                     },
                     'arin':
                         {'dlg1': ["ftp://ftp.arin.net/pub/stats/arin/delegated-arin-%s", "data/delegated-arin-latest"],
                          'dlge': ["ftp://ftp.arin.net/pub/stats/arin/delegated-arin-extended-%s", "data/delegated-arin-extended-latest"],
-                         'roaexport': ['http://ripeval.labs.lacnic.net/rpki/batch-validation/%s/arin.tal-roa-prefixes.csv'],
-                         'countrydata': json_load('etc/arin_region.json')
+                         'roaexport': ['http://ripeval.labs.lacnic.net/rpki/batch-validation/%s/arin.tal-roa-prefixes.csv']
+                         #'countrydata': json_load('etc/arin_region.json')
                          },
                     'lacnic_br':
                         {'dlg1': ["ftp://ftp.registro.br/pub/stats/delegated-ipv6-nicbr-latest", "data/delegated-ipv6-nicbr-latest"],
