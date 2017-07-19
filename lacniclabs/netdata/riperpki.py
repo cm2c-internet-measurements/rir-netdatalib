@@ -108,8 +108,8 @@ class ripevalRoaData(object):
         p = self.dbh.calculateMetaColumn("type", mif)
         mif = lambda x: pfxExplode(x['prefix'])['equiv']
         p = self.dbh.calculateMetaColumn("equiv", mif)
-        mif = lambda x: pfxExplode(x['prefix'])['prefixlen']
-        p = self.dbh.calculateMetaColumn("prefixlen", mif)
+        mif = lambda x: pfxExplode(x['prefix'])['pfxlen']
+        p = self.dbh.calculateMetaColumn("pfxlen", mif)
         #
         return
     # end
