@@ -4,6 +4,10 @@ riperpki.py : Imports RIS WHOIS Dumps for both IPv4 and IPv6 into an SQL Lite da
 :author: carlos@lacnic.net
 :date: 20160526
 :date: 20170328
+:date: 20170719
+
+Changelog:
+- 20170719 fixed prefixlen in roas not getting updated
 """
 
 #########################################################################################
@@ -104,6 +108,8 @@ class ripevalRoaData(object):
         p = self.dbh.calculateMetaColumn("type", mif)
         mif = lambda x: pfxExplode(x['prefix'])['equiv']
         p = self.dbh.calculateMetaColumn("equiv", mif)
+        mif = lambda x: pfxExplode(x['prefix'])['prefixlen']
+        p = self.dbh.calculateMetaColumn("prefixlen", mif)
         #
         return
     # end
