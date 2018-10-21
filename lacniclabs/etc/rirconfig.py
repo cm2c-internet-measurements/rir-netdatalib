@@ -52,7 +52,7 @@ rir_config_data = { 'lacnic':
                         },
                     'ripencc':
                         {'dlg1': ["ftp://ftp.lacnic.net/pub/stats/ripencc/delegated-ripencc-%s", "data/delegated-ripencc-latest"],
-                         'dlge': ["ftp://ftp.lacnic.net/pub/stats/ripencc/delegated-ripencc-extended-%s", "data/delegated-ripencc-extended-latest"],
+                         'dlge': ["http://ftp.ripe.net/pub/stats/ripencc/delegated-ripencc-extended-%s", "data/delegated-ripencc-extended-latest"],
                          'roaexport': ['http://ripeval.labs.lacnic.net/rpki/batch-validation/%s/ripe-ncc.tal-roa-prefixes.csv'],
                          'ris_whois_v4': 'http://www.ris.ripe.net/dumps/riswhoisdump.IPv4.gz',
                          'ris_whois_v6': 'http://www.ris.ripe.net/dumps/riswhoisdump.IPv6.gz'
