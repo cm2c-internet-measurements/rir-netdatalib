@@ -3,14 +3,15 @@
 # 20170310 v1
 # 20170328 v 0.1.2
 # 20170329 v 0.1.3
+# 20190825 v 0.1.7
 
 
 from setuptools import setup
 
 setup(name='lacniclabs',
-      version='0.1.6',
+      version='0.1.7',
       description='cm2c python commons',
-      url='https://github.com/LACNIC/labs-opendata-datasets',
+      url='https://github.com/cm2c-internet-measurements/rir-netdatalib',
       author='Carlos M. Martinez',
       author_email='carlos@lacnic.net',
       license='BSD',

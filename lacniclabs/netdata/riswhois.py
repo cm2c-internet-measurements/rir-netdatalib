@@ -43,7 +43,7 @@ class risWhois(object):
         self.db_filename = kwargs.get('db_filename', None)
 
         s3_template = [ ('origin_as', 'text'), ('prefix', 'text'), ('viewed_by', 'integer')]
-        self.dbh = sql3load(s3_template, self.db_filename, "\t", "riswhois")
+        self.dbh = sql3load(s3_template, self.db_filename, "\t", "riswhois", comments_mark='%')
         self._add_columns() # add meta columns
 
         if not self.local_file:
