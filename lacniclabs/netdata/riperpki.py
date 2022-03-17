@@ -48,6 +48,8 @@ class ripevalRoaData(object):
         self.db_filename = kwargs.get('db_filename', None)
         # set url or default to the well known one
         self.validator_url = kwargs.get('url', "http://ripeval.labs.lacnic.net:8080/export.csv")
+        # retries
+        self._retries = 3
 
         # s3_template = [ ('origin_as', 'text'), ('prefix', 'text'), ('viewed_by', 'integer')]
         csv_template = [('origin_as', 'text'), ('prefix', 'text'), ('maxlen', 'integer'), ('ta', 'text')]
@@ -56,8 +58,18 @@ class ripevalRoaData(object):
 
         if not self.local_file:
             # download Dumps
-            self.local_file = self._getRoaCSVExport()
-            r = self._addEntries(local_file=self.local_file)
+            success = False
+            for n in range(0,self._retries):
+                try:
+                    self.local_file = self._getRoaCSVExport()
+                    r = self._addEntries(local_file=self.local_file)
+                    success = True
+                    break
+                except:
+                    continue
+            # end for
+            if not success:
+                raise Exception("Unable to download ROA CSV export")
         else:
             r = self._addEntries(local_file=self.local_file)
         #
@@ -70,10 +82,16 @@ class ripevalRoaData(object):
         Downloads RPKI ROA Validator
         """
         dp = dprint()
-        dp.log("Downloading dump file for roadata...")
-        dlg_tmpfile = get_tmp_fn(filename="rpkivalidator-roadata.csv" )
-        # dlg_tmpfile_name4 = getfile(rirconfig.rir_config_data['ripencc']['ris_whois_v4'] , dlg_tmpfile, 86400)
-        dlg_tmpfile_name = getfile(self.validator_url , dlg_tmpfile, 3600)
+        for n in range(0, self._retries):
+            try:
+                dp.log("Downloading dump file for roadata...")
+                dlg_tmpfile = get_tmp_fn(filename="rpkivalidator-roadata.csv" )
+                # dlg_tmpfile_name4 = getfile(rirconfig.rir_config_data['ripencc']['ris_whois_v4'] , dlg_tmpfile, 86400)
+                dlg_tmpfile_name = getfile(self.validator_url , dlg_tmpfile, 3600)
+            except:
+                dp.log("Failure. Retrying.")
+                continue
+        # end for
         return dlg_tmpfile
     #end
 
