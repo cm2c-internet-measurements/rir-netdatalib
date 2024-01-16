@@ -41,13 +41,13 @@ rir_config_data = { 'lacnic':
                          # 'countrydata': json_load('etc/lacnic_region.json')
                         },
                     'afrinic':
-                        {'dlg1': ["ftp://ftp.lacnic.net/pub/stats/afrinic/delegated-afrinic-%s", "data/delegated-afrinic-latest"],
-                         'dlge': ["ftp://ftp.lacnic.net/pub/stats/afrinic/delegated-afrinic-extended-%s", "data/delegated-afrinic-extended-latest"],
+                        {'dlg1': ["http://ftp.lacnic.net/pub/stats/afrinic/delegated-afrinic-%s", "data/delegated-afrinic-latest"],
+                         'dlge': ["http://ftp.lacnic.net/pub/stats/afrinic/delegated-afrinic-extended-%s", "data/delegated-afrinic-extended-latest"],
                          'roaexport': ['http://ripeval.labs.lacnic.net/rpki/batch-validation/%s/afrinic.tal-roa-prefixes.csv']
                          },
                     'apnic':
-                        {'dlg1': ["ftp://ftp.lacnic.net/pub/stats/apnic/delegated-apnic-%s", "data/delegated-apnic-latest"],
-                         'dlge': ["ftp://ftp.lacnic.net/pub/stats/apnic/delegated-apnic-extended-%s", "data/delegated-apnic-extended-latest"] ,
+                        {'dlg1': ["http://ftp.lacnic.net/pub/stats/apnic/delegated-apnic-%s", "data/delegated-apnic-latest"],
+                         'dlge': ["http://ftp.lacnic.net/pub/stats/apnic/delegated-apnic-extended-%s", "data/delegated-apnic-extended-latest"] ,
                          'roaexport': ['http://ripeval.labs.lacnic.net/rpki/batch-validation/%s/apnic.tal-roa-prefixes.csv']
                         },
                     'ripencc':
