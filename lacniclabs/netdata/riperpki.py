@@ -47,7 +47,7 @@ class ripevalRoaData(object):
         # database filename
         self.db_filename = kwargs.get('db_filename', None)
         # set url or default to the well known one
-        self.validator_url = kwargs.get('url', "http://ripeval.labs.lacnic.net:8080/export.csv")
+        self.validator_url = kwargs.get('url', "https://routinator.labs.lacnic.net/csv")
         # retries
         self._retries = 3
 
