@@ -7,7 +7,12 @@
 import os
 
 
+# ## Servers
+# servers = { 'ripeval': {'http://ripeval.labs.lacnic.net:8080'}
+#            }
+# ## -------------
+
 ## Servers
-servers = { 'ripeval': {'http://ripeval.labs.lacnic.net:8080'}
+servers = { 'ripeval': {'https://routinator.labs.lacnic.net/csv'}
            }
 ## -------------
