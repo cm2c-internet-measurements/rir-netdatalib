@@ -9,7 +9,7 @@
 from setuptools import setup
 
 setup(name='netdatalib',
-      version='0.1.9',
+      version='0.1.10',
       description='cm2c python commons',
       url='https://github.com/cm2c-internet-measurements/rir-netdatalib',
       author='Carlos M. Martinez',
