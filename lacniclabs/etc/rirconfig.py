@@ -59,8 +59,8 @@ rir_config_data = { 'lacnic':
                          #'countrydata': json_load('etc/ripencc_region.json'),
                     },
                     'arin':
-                        {'dlg1': ["ftp://ftp.arin.net/pub/stats/arin/delegated-arin-%s", "data/delegated-arin-latest"],
-                         'dlge': ["ftp://ftp.arin.net/pub/stats/arin/delegated-arin-extended-%s", "data/delegated-arin-extended-latest"],
+                        {'dlg1': ["https://ftp.arin.net/pub/stats/arin/delegated-arin-%s", "data/delegated-arin-latest"],
+                         'dlge': ["https://ftp.arin.net/pub/stats/arin/delegated-arin-extended-%s", "data/delegated-arin-extended-latest"],
                          'roaexport': ['http://ripeval.labs.lacnic.net/rpki/batch-validation/%s/arin.tal-roa-prefixes.csv']
                          #'countrydata': json_load('etc/arin_region.json')
                          },
