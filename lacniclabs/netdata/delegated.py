@@ -119,6 +119,7 @@ class delegatedStats(object):
         dlg_tmpfile = get_tmp_fn(filename="tmp_delegated-extended-%s-%s" % (drir, ddate) )
         try:
             dlg_f_url = rirconfig.rir_config_data[self.drir]['dlge'][0] % (self.ddate)
+            dp.log(".... using URL %s", (dlg_f_url) )
             dlg_tmpfile_name = getfile( dlg_f_url, dlg_tmpfile, 3600)
         except:
             print "Failed downloading stats file! url=%s" % (dlg_f_url)
